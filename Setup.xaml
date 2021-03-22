@@ -1,0 +1,38 @@
+﻿<Window x:Class="ImageConverter.frm_Setup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ImageConverter"
+        mc:Ignorable="d"
+        Title="Setup" Height="350" Width="800" ResizeMode="NoResize" FontFamily="Tahoma" WindowStartupLocation="CenterScreen">
+    <Grid ShowGridLines="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="219*"></ColumnDefinition>
+            <ColumnDefinition Width="280*"></ColumnDefinition>
+            <ColumnDefinition Width="295*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="67*"></RowDefinition>
+            <RowDefinition Height="67*"></RowDefinition>
+            <RowDefinition Height="67*"></RowDefinition>
+            <RowDefinition Height="67*"></RowDefinition>
+            <RowDefinition Height="39*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button x:Name="btn_SaveConfig" Content="Save" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="4" VerticalAlignment="Stretch" Margin="5,5,5,5" TabIndex="9" Click="btn_SaveConfig_Click"/>
+        <Button x:Name="btn_Close" Content="Cancel" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="4" VerticalAlignment="Stretch" Margin="5,5,5,5" Click="btn_Close_Click" TabIndex="10"/>
+        <Label Content="Main picture (Width x Height) px:" HorizontalAlignment="Right" VerticalAlignment="Center" Height="24" Width="188"/>
+        <Label Content="Standart picture (Width x Height) px:" HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Center" Height="24" Width="209" Margin="0,18,0,16" />
+        <Label Content="Small picture (Width x Height) px:" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center" Height="24" Width="199" Margin="0,28,0,15"/>
+        <Label Content="Export directory:" HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Center" Height="24" Margin="0,27,0,16" Width="99"/>
+        <TextBox x:Name="tb_ExportDirectory" Grid.Column="1" HorizontalAlignment="Stretch" Height="30" Grid.Row="3" TextWrapping="Wrap" VerticalContentAlignment="Center" Text="" VerticalAlignment="Center" Margin="5,23,5,14" BorderThickness="1" BorderBrush="#FF00040E" TabIndex="6" PreviewTextInput="tb_ExportDirectory_PreviewTextInput" TextChanged="tb_ExportDirectory_TextChanged" />
+        <Button x:Name="btn_BrowseDirectory" Content="Browse..." Grid.Column="2" Height="36" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center" Width="144" TabIndex="7" Margin="5,0,0,0" Click="btn_BrowseDirectory_Click"/>
+        <TextBox x:Name="tb_MainPicW" Grid.Column="1" HorizontalAlignment="Stretch" Height="30" TextWrapping="Wrap" Text="" VerticalAlignment="Center"  VerticalContentAlignment="Center" BorderBrush="#FF00040E" TabIndex="0" Loaded="tb_MainPicW_Loaded" PreviewTextInput="tb_MainPicW_PreviewTextInput" TextChanged="tb_MainPicW_TextChanged" Margin="5,0"/>
+        <TextBox x:Name="tb_MainPicH" Grid.Column="2" HorizontalAlignment="Stretch" Height="30" TextWrapping="Wrap" Text="" VerticalAlignment="Center"  VerticalContentAlignment="Center" BorderBrush="#FF00040E" TabIndex="1" TextChanged="tb_MainPicH_TextChanged" Margin="5,0" />
+        <TextBox x:Name="tb_StandartW" Grid.Column="1" HorizontalAlignment="Stretch" Height="30" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalContentAlignment="Center" VerticalAlignment="Center" BorderBrush="#FF00040E" Margin="5,16,5,12" TabIndex="2" PreviewTextInput="tb_StandartW_PreviewTextInput" TextChanged="tb_StandartW_TextChanged"/>
+        <TextBox x:Name="tb_StandartH" Grid.Column="2" HorizontalAlignment="Stretch" Height="30" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalContentAlignment="Center" VerticalAlignment="Center" BorderBrush="#FF00040E" Margin="5,16,5,12" TabIndex="3" PreviewTextInput="tb_StandartH_PreviewTextInput" TextChanged="tb_StandartH_TextChanged"/>
+        <TextBox x:Name="tb_SmallPicW" Grid.Column="1" HorizontalAlignment="Stretch" Height="30" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalContentAlignment="Center" VerticalAlignment="Center" BorderBrush="#FF00040E" Margin="5,24,5,13" TabIndex="4" PreviewTextInput="tb_SmallPicW_PreviewTextInput" TextChanged="tb_SmallPicW_TextChanged"/>
+        <TextBox x:Name="tb_SmallPicH" Grid.Column="2" HorizontalAlignment="Stretch" Height="30" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalContentAlignment="Center" VerticalAlignment="Center" BorderBrush="#FF00040E" Margin="5,24,5,13" TabIndex="5" PreviewTextInput="tb_SmallPicH_PreviewTextInput" TextChanged="tb_SmallPicH_TextChanged"/>
+        <Button x:Name="btn_DefaultValues" Content="Default" Margin="25,5,0,5" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Stretch" Width="126" TabIndex="8" Click="btn_DefaultValues_Click"/>
+    </Grid>
+</Window>
