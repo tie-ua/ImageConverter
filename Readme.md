@@ -30,8 +30,6 @@ The main program window also contains the following program control buttons:
 
 When you press the CONVERT button, the program displays a horizontal progress bar below the control buttons to notify the user about the progress of the conversion process.
 
-
-
 Program settings window
 
 Program settings window shows the images sizes after processing and the directory in which they will be placed after the completion of processing. Please note that the program creates an additional subfolder RESULT in the folder ("Export directory" field). The images after processing will be placed in the subfolder RESULT.
@@ -48,6 +46,19 @@ Working with the program
 4) Check the program settings before starting the image processing procedure. To do this, click on the CONFIG button. The program will display the program settings window.
 5) Press the CONVERT button to start the image conversion process. After the process is completed, the program will display on the screen the informational message about it.
 6) Exit work with the program by pressing the CLOSE button.
+
+The list of software that was used to build this program
+
+1) Microsoft C# 2019 Community Edition for Windows;
+2) ImageProcessor (a collection of lightweight libraries written in C# that allows you to manipulate images on-the-fly using .NET 4.5+).
+Source: https://imageprocessor.org/;
+GitHub: https://github.com/JimBobSquarePants/ImageProcessor
+License: a free and open source.
+3) Ookii.Dialogs.Wpf (a class library for .NET and .NET Core applications providing several common dialogs)
+Source: https://www.nuget.org/packages/Ookii.Dialogs.Wpf/
+GitHub: https://github.com/ookii-dialogs/ookii-dialogs-wpf
+License: the license redistribution and use in source and binary forms, with or without modification, are permitted. Detail - https://licenses.nuget.org/BSD-3-Clause
+
 
 The authors
 
