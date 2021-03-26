@@ -194,6 +194,28 @@ namespace ImageConverter
             InitializeComponent();
         }
 
+        // verifying that the file is an image
+        private bool FileIsImage(string FileName)
+        {
+
+            bool result = false;
+
+            try
+            {
+                System.Drawing.Image ImgFile = System.Drawing.Image.FromFile(FileName);
+                System.Drawing.Imaging.ImageFormat ImgType = ImgFile.RawFormat;
+                ImgFile.Dispose();
+                result = true;
+            }
+            catch 
+            {
+                result = false;
+            }
+            return result;
+
+        }
+
+
         // checking status of the removeFileFromList button and the clearList button.
         private void CheckButtonStatus()
         {
@@ -208,7 +230,6 @@ namespace ImageConverter
             // 1. initialization
             string DuplicateFileNames = "";
             OpenFileDialog openFileDlg = new OpenFileDialog();
-            //openFileDlg.Filter = "JPG files (*.jpg)|*.jpg|JPEG files (*.jpeg)|*.jpeg|PNG files (*.png)|*.png|All Files (*.*)|*.*";
             openFileDlg.Filter = "Іmage files|*.jpg;*.jpeg;*.png|All Files (*.*)|*.*";
             openFileDlg.DefaultExt = "*.jpg";
             openFileDlg.Multiselect = true;
@@ -216,19 +237,20 @@ namespace ImageConverter
             if (string.IsNullOrEmpty(LastFileDirOpened) == false) openFileDlg.InitialDirectory = LastFileDirOpened;
             if (openFileDlg.ShowDialog() == false) return;
 
-            // 2. Adding files to the list. An attempt to add twice the same files to the list is blocked.
+            // 2. Adding files to the list. An attempt to add twice the same files or add the non-graphic files to the list is blocked. 
             foreach (string FileName in openFileDlg.FileNames)
             {
                 if (lb_FileList.Items.Contains(FileName) == false)
                 {
-                    lb_FileList.Items.Add(FileName);
+                    if (FileIsImage(FileName)) lb_FileList.Items.Add(FileName);
+                    else DuplicateFileNames = DuplicateFileNames + " \n" + FileName;
                     LastFileDirOpened = System.IO.Path.GetDirectoryName(FileName);
                 }
                 else DuplicateFileNames = DuplicateFileNames + " \n" + FileName;
             }
             if (string.IsNullOrEmpty(DuplicateFileNames) == false)
-                MessageBox.Show($"The following files: \n {DuplicateFileNames} \n\n have not been added to the list as they are already in the list", "Information",
-                                MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show($"The following files: \n {DuplicateFileNames} \n\n were not added to the list because they are already in the list or are not images", "Error",
+                                MessageBoxButton.OK, MessageBoxImage.Error);
 
             // 3. enable the removeFileFromList button and the clearList button if the list of filenames is not empty.
             CheckButtonStatus();
