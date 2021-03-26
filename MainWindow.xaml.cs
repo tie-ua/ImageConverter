@@ -208,7 +208,8 @@ namespace ImageConverter
             // 1. initialization
             string DuplicateFileNames = "";
             OpenFileDialog openFileDlg = new OpenFileDialog();
-            openFileDlg.Filter = "JPG files (*.jpg)|*.jpg|JPEG files (*.jpeg)|*.jpeg |PNG files (*.png)|*.png|All Files (*.*)|*.*";
+            //openFileDlg.Filter = "JPG files (*.jpg)|*.jpg|JPEG files (*.jpeg)|*.jpeg|PNG files (*.png)|*.png|All Files (*.*)|*.*";
+            openFileDlg.Filter = "Іmage files|*.jpg;*.jpeg;*.png|All Files (*.*)|*.*";
             openFileDlg.DefaultExt = "*.jpg";
             openFileDlg.Multiselect = true;
             openFileDlg.Title = "Add new file";
