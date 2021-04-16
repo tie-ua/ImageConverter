@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ImageConverter"
         mc:Ignorable="d"
-        Title="Image Processor 2021" Height="450" Width="1097.382" WindowStartupLocation="CenterScreen" FontFamily="Tahoma" ResizeMode="CanMinimize" Loaded="Window_Loaded">
+        Title="Image Processor 2021" Height="450" Width="1097.382" WindowStartupLocation="CenterScreen" FontFamily="Tahoma" ResizeMode="CanMinimize">
     <Grid ShowGridLines="False">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="108*"></ColumnDefinition>

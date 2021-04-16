@@ -318,10 +318,6 @@ namespace ImageConverter
             SetupDlg.ShowDialog();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-        }
-
         private async void btn_StartProcess_Click(object sender, RoutedEventArgs e)
         {
             string OutputDir = "";
